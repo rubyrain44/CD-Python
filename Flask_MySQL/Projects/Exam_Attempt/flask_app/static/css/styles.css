@@ -1,0 +1,107 @@
+.header_bar_buttons {
+    padding: 5px;
+    margin: 30px !important;
+    color:black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.title_box {
+    width: 250px;
+}
+
+.desc_box {
+    width: 250px;
+}
+
+.magazine_box {
+    width: 900px;
+    margin-left: 1px;
+}
+
+.user_mag_box {
+    width: 500px;
+    padding: 15px;
+}
+
+.user_mag_div {
+    margin-left: 200px;
+}
+
+span {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.move_over {
+    margin-left: 10px;
+}
+
+.mag_titles {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.secret_img {
+    width:600px;
+    height:600px;
+    border: 2px solid aquamarine;
+}
+
+.player {
+    width: 300px;
+    margin-left: 135px;
+    margin-top: 25px;
+}
+
+.page {
+    padding-left: 320px;
+}
+
+.secret_header {
+    padding-left: 75px;
+    color:aquamarine;
+    font-size: 100px;
+}
+
+.secret_p {
+    padding-left: 185px;
+}
+
+.secret_link {
+    margin-left:1000px;
+    color:black;
+}

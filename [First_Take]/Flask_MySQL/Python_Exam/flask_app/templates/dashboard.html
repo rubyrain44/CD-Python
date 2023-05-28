@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Rock On {{ login_user.first_name }} {{ login_user.last_name }}!!!!</h1>
+        <a href="/mybands">My Bands</a>
+        <a href="/sighting">New Band</a>
+        <form action="/logout" method="POST">
+            <input class="bg-info text-white" type="submit" value="Logout">
+        </form>
+    </div>
+    
+    <div class="container">
+        <h2 class="mt-5" >All Bands</h2>
+        <table class="mt-2 table-dark">
+            <tr>
+                <th>Band Name</th>
+                <th>Founding Member</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+            {% for band in bands %}
+            <tr class="table-secondary">
+                <td class="text-black-50">{{ band.name }}</td>
+                <td class="text-black-50">{{ band.creator.first_name}} {{ band.creator.last_name }}</td>
+                <td class="text-black-50">{{ band.genre }}</td>
+            {% if session['user_id'] == band.user_id %}
+                <td><a href="/edit/{{ band.id }}">Edit | </a><a href="/delete/{{ band.id }}">Delete</a></p>
+            {% endif %}
+            {% endfor %}
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

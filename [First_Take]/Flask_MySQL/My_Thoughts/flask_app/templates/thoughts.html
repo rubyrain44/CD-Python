@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="header-bar"><!--header-bar starting tag-->
+        <div class="header-bar-top">
+            <h1>Welcome {{ logged_user.first_name}} {{ logged_user.last_name }}!</h1>
+                <form action="/logout" method="POST">
+                    <input class="btn btn-secondary" style ="height: 40px; margin-right: 10px;" type="submit" value="Logout">
+                </form>
+        </div>
+
+        <div class="header-bar-bottom">
+            <form action="/create" method="POST" style="display: flex;">
+                <input class="form-control" type="text" name="thought" style="width: 600px;" placeholder="Post a thought here">
+                <input class="btn btn-secondary" style ="height: 40px; margin-right: 10px;" type="submit" value="Add thought">
+            </form>
+        </div>
+    </div><!--header-bar closing tag-->
+
+    <div class="container">
+        <div class="row">
+            <div class="top-content">
+                <a href="/view" class="thought-box">{{ user.first_name }} says:</a>
+                <div class="thought">hello {{ user.thought }}</div>
+            </div>
+            
+            <div class="bottom-content">
+                <div class="like-button btn btn-secondary" style="height: 35px; margin: 5px;" onclick="like()">Like</div>
+                <div class="unlike-button btn btn-secondary" style="height: 35px; margin: 5px;" onclick="unlike()">Unlike</div>
+                <p id="like-count"> likes</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

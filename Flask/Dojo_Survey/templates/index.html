@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <form action="/user" method='post'>
+        <label for="name">Your Name: </label>
+        <input type="text" name="name">
+
+        <label for="location">Dojo Location: </label>
+        <select name="location" id="location">
+            <option>Online</option>
+            <option>New Jersey</option>
+            <option>South Carolina</option>
+            <option>California</option>
+        </select>
+
+        <label for="Language">Favorite Language: </label>
+        <select name="Language" id="Language">
+            <option>Javascript</option>
+            <option>Python</option>
+            <option>Mern</option>
+        </select>
+
+        <label for="comment">Comment (optional): </label>
+        <input type="text" name="comment">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

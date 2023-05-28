@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="nav-bar">
+        <h1 class="bg-secondary text-white">User {{ user.id }}</h1>
+        <a href ="/read_all">Home</a>
+    </div>
+
+    <div class="border border-dark">
+            <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p>
+            <br>
+
+            <p>Email: {{ user.email }}</p>
+            <br>
+
+            <p>Created On: {{ user.created_at }}</p>
+            <br>
+            
+            <p>Last Updated On: {{ user.updated_at }}</p>
+    </div>
+    <a href = "/user_edit/{{ user.id }}">Edit</a><a href ="/delete/{{ user.id }}"> Delete</a>       
+</body>
+</html>

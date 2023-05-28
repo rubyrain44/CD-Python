@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="header-bar" style="display: flex; justify-content: space-between">
+        <h1>Sasquatch Sightings</h1>
+        <h2>{{ user.first_name}} {{ user.last_name }}</h2>
+    </div>
+
+    <div class="button-bar" style="display: flex; justify-content: end">
+        <form action="/dashboard" class="report">
+            <input class="bg-info text-white" type="submit" value="Dashboard" style="margin-right: 10px">
+        </form>
+
+        <form action="/logout" class="logout" method="POST">
+            <input class="bg-info text-white" type="submit" value="Logout" style="margin-right: 10px">
+        </form>
+    </div>
+
+    <h2>Report A Sighting</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-5" style="display: flex">
+                <form action="/edit/{{ sightings.id }}" method="POST">
+                    <div class="top">
+                        <label for="location">Location:</label>
+                        <input class="form-control" type="text" name="location" value="{{ sightings.location }}">
+                        
+                        <label for="date">Date of Sighting:</label>
+                        <input class="form-control" type="date" id="date" name="date" value="{{ sightings.date }}">
+
+                    </div>
+                    
+                    <div class="col-5">
+                        <div class="bottom">
+                            <label for="memo">What Happened:</label>
+                            <input class="form-control" type="text" name="memo" value="{{ sightings.memo }}">
+                            
+                            <label for="sasquatchs"># of Sasquatches:</label>
+                            <input type="number" id="quantity" name="sasquatchs" value="{{ sightings.sasquatchs }}">
+                        </div>
+                        <input class="bg-info text-white" type="submit" value="Report">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
